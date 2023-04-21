@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    volumes:
+      - .:/django
+    ports:
+      - 8000:8000
+    image: app:django
+    container_name: django-container
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql-container2
+    environment:
+      MYSQL_DATABASE: empresa
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+    ports:
+    - 3306:3306

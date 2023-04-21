@@ -1,0 +1,9 @@
+asgiref==3.3.1
+Django==3.1.7
+pytz==2021.1
+sqlparse==0.4.1
+mysql-connector-python==8.0.33
+mysqlclient==2.1.1
+# pip install djangorestframework
+# pip install markdown       # Markdown support for the browsable API.
+# pip install django-filter 
