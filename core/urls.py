@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path,include
 from department.views import DepartmentsViewSet
 from employee.views import EmployeeViewSet
-from project.views import ProjectViewSet
+from project.views import ProjectViewSet,EmployeeWorkProjectViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'departments', DepartmentsViewSet)
 router.register(r'employees', EmployeeViewSet)
 router.register(r'projects', ProjectViewSet)
+router.register(r'employee_work_project', EmployeeWorkProjectViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
